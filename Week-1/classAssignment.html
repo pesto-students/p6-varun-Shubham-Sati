@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./classassig.css">
+
+    <title>class assignment</title>
+
+    <script type="text/javascript"> 
+        var citiesByState = {
+        Uttarakhand: ["Choose City","Dehradun","Haridwar","Roorkee"],
+        Bihar: ["Choose City","Patna","Gaya","Muzaffarpur"],
+        Gujarat: ["Choose City","Ahmedabad","Surat","Rajkot"],
+        Kerala: ["Choose City","Thiruvananthapuram","Kochi","Kollam"]
+        }
+
+        function makeSubmenu(value) {
+            if(value.length==0) 
+                document.getElementById("citySelect").innerHTML = "<option></option>";
+            else {
+                var citiesOptions = "";
+                for(cityId in citiesByState[value]) {
+                    citiesOptions+="<option>"+citiesByState[value][cityId]+"</option>";
+                }
+                document.getElementById("citySelect").innerHTML = citiesOptions;
+            }
+        }
+
+        function validateForm(){
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var age = document.getElementById("age").value;
+            var institute = document.getElementById("institute").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var address = document.getElementById("address").value;
+            var state = document.getElementById("stateSelect").value;
+            var city = document.getElementById("citySelect").value;
+
+            var displayDiv = document.getElementById("displayDiv")
+            
+            if( fname == "" ){
+                // alert("First name must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >First name must be filled</Strong>`;
+                document.getElementById("fname").focus();
+            }else if( lname == "" ){
+                // alert("Last name must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >Last name must be filled`;
+                document.getElementById("lname").focus();
+            }else if( age == "" ){
+                // alert("Age must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >Age must be filled`;
+                document.getElementById("age").focus();
+            }else if( institute == "" ){
+                // alert("Institute must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >Institute must be filled`;
+                document.getElementById("institute").focus();
+            }else if( email == "" ){
+                // alert("Email must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >Email must be filled`;
+                document.getElementById("email").focus();
+            }else if( mobile == "" || isNaN(mobile) ){
+                // alert("Mobile must be filled");
+                mobile == "" ? 
+                        displayDiv.innerHTML = `<Strong class = 'bg-warning' >Mobile No. must be filled`
+                        : 
+                        displayDiv.innerHTML = `<Strong class = 'bg-warning' >Mobile No. must be in number`
+                            
+                document.getElementById("mobile").focus();
+            }else if( address == "" ){
+                // alert("Address must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >Address must be filled`;
+                document.getElementById("address").focus();
+            }else if( state == "Choose State" ){
+                // alert("State must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >State must be filled`;
+                // document.getElementById("stateSelect").click();
+            }else if( city == "Choose City" ){
+                // alert("City must be filled");
+                displayDiv.innerHTML = `<Strong class = 'bg-warning' >City must be filled`;
+                // document.getElementById("citySelect").click();
+            }else{
+                var display = ` 
+                                First Name  = ${fname} 
+                                Last Name   = ${lname} 
+                                Age         = ${age}
+                                Institute   = ${institute}
+                                Email       = ${email}@google.com
+                                Mobile      = 91+${mobile}
+                                Address     = ${address}
+                                State       = ${state}
+                                City        = ${city}
+                `;
+                alert(display);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container my-5 maindiv">
+        <p class="h1">Registration Form</p>
+        <div class="container my-4" id="displayDiv">
+            
+        </div>
+
+        <div class="container " id="formdiv">
+            <form action="/action_page.php" >
+                <div class="row pb-3">
+                    <div class="col">
+                        <label for="fname" class="form-label">First Name:</label>
+                        <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname">
+                    </div>
+                    <div class="col">
+                        <label for="lname" class="form-label">Last Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname">
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col">
+                        <label for="age" class="form-label">Age:</label>
+                        <input type="text" class="form-control" id="age" placeholder="Age" name="age">
+                    </div>
+                    <div class="col">
+                        <label for="institute" class="form-label">Institute:</label>
+                        <input type="text" class="form-control" id="institute" placeholder="Institute" name="moinstitutebile">
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col input-group mb-3 input-group-sm my-3">
+                        <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+                        <span class="input-group-text">@google.com</span>
+                    </div>
+                    <div class="col input-group mb-3 input-group-sm my-3">
+                        <span class="input-group-text">91+</span>
+                        <input type="text" class="form-control" id="mobile" placeholder="Mobile No." name="mobile"> 
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col">
+                        <label for="gender" class="form-label">Gender:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="radio1" checked>
+                            <label class="form-check-label" for="radio1">Prefer Not To Say</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="male" name="optradio" value="Male">
+                            <label class="form-check-label" for="Male">male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="female" name="optradio" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" rows="3" id="address" name="text"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="form-floating col">
+                        <select class="form-select" id="stateSelect" name="statelist" onchange="makeSubmenu(this.value)">
+                          <option disabled selected>Choose State</option>
+                          <option>Uttarakhand</option>
+                          <option>Bihar</option>
+                          <option>Gujarat</option>
+                          <option>Kerala</option>
+                        </select>
+                        <label for="selstate1" class="form-label">States:</label>
+                    </div>
+                
+                    <div class="form-floating col">
+                        <select class="form-select" id="citySelect" name="sellist">
+                          <option disabled selected>Choose City</option>
+                          <option></option>
+                        </select>
+                        <label for="selstate1" class="form-label">City:</label>
+                    </div>
+                </div>
+            </form>
+            <button type="submit" onclick="validateForm()" id="submit_key">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

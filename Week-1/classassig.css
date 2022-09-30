@@ -1,0 +1,24 @@
+
+.maindiv{
+    border: 1px solid rgb(68, 66, 66);
+    border-radius: 4px;
+    background-color: rgb(106, 179, 179);
+}
+
+#submit_key{
+    border: 1px solid yellowgreen;
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    margin: 3% 0 1% 46%;
+    width: 6em;
+    height: 2.5em;
+}
+
+#formdiv{
+    background-color: rgb(67, 155, 155);
+    border-radius: 3px;
+    /* border: 1px solid rgb(37, 115, 115); */
+}
+
+
