@@ -81,7 +81,8 @@ a{
     font-size: 0.8em;
     width: 30em;
     padding: 1em;
-    border: 1px solid #ccc;
+    border: 2px solid rgb(154, 149, 149);
+    border-radius: 5px;
 }
 
 .myForm * {
