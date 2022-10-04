@@ -158,8 +158,56 @@
         </div>
     </div>
     <div id="form_div">
-        <form>
+        <form class="myForm">
+            <p>
+                <label>First Name
+                <input type="text" name="customer_name" required>
+                </label> 
+            </p> 
+            <p>
+                <label>Last Name
+                <input type="text" name="customer_name" required>
+                </label> 
+            </p>    
+            <p>
+                <label>Phone 
+                <input type="tel" name="phone_number">
+                </label>
+            </p>
+            <p>
+                <label>Email 
+                <input type="email" name="email_address" required>
+                </label>
+            </p>
+            <fieldset>
+                <legend>Gender ?</legend>
+                <p><label class="choice"> <input type="radio" name="gender" required value="male"> Male </label></p>
+                <p><label class="choice"> <input type="radio" name="gender" required value="female"> Female </label></p>
+                <p><label class="choice"> <input type="radio" name="gender" required value="na"> Prefer Not To Say </label></p>
+            </fieldset>
 
+            <p>
+                <label>Date Of Birth
+                <input type="datetime-local" name="pickup_time" required>
+                </label>
+            </p>
+            <p>
+                <label>Location
+                <select id="Location" name="location" required>
+                <option value="" selected="selected">Select One</option>
+                <option value="srinagar" >Srinagar</option>
+                <option value="srikot" >Srikot</option>
+                <option value="dehradun" >Dehradun</option>
+                </select>
+                </label> 
+            </p>
+            <p>
+                <label>Address
+                <textarea name="address" row="5" maxlength="500" required></textarea>
+                </label>
+            </p>
+
+            <p><button>Submit Booking</button></p>
         </form>
     </div>
 </body>
