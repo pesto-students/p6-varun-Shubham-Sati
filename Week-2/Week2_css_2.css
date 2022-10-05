@@ -1,0 +1,111 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(202, 189, 189);
+    position: relative;
+    padding-left: 5%;
+    padding-top: 4em;
+}
+
+p{
+    font-size:x-large ;
+}
+
+#main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10%;
+    /* background-color: cyan; */
+    position: relative;
+}
+
+#main_div:hover > div > #square1{
+    transform: rotate(90deg) translateY(100px);
+    transition-timing-function: ease-in-out;
+}
+
+#main_div:hover > div > #square2{
+    transform: rotate(-90deg) translateY(100px);
+    transition-timing-function: ease-in-out;
+}
+
+#main_div:hover > div > #square3{
+    transform: rotate(-90deg) translateY(-100px);
+    transition-timing-function: ease-in-out;
+}
+
+#main_div:hover > div > #square4{
+    transform: rotate(90deg) translateY(-100px);
+    transition-timing-function: ease-in-out;
+}
+
+#main_div:hover > #hii_div{
+    display: block;
+}
+
+#square1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: transform 2s;
+}
+
+/* #square1:hover{
+    transform: rotate(90deg) translateY(100px);
+    transition-timing-function: ease-in-out;
+} */
+
+#square2{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transition: transform 2s;
+}
+/* #square2:hover{
+    transform: rotate(-90deg) translateY(100px);
+    transition-timing-function: ease-in-out;
+} */
+
+#square3{
+    width: 100px;
+    height: 100px;
+    background-color:  blue;
+    transition: transform 2s;
+}
+/* #square3:hover{
+    transform: rotate(-90deg) translateY(-100px);
+    transition-timing-function: ease-in-out;
+} */
+
+
+#square4{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: transform 2s;
+}
+
+/* #square4:hover{
+    transform: rotate(90deg) translateY(-100px);
+    transition-timing-function: ease-in-out;
+} */
+
+#hii_div{
+    font-size: 2em;
+    display: none; 
+    position: absolute;
+    top: 24%;
+    left: 49%;
+}
+
+
+
