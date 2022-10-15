@@ -1,0 +1,88 @@
+
+
+Que. When a user enters an URL in the browser, how does the browser fetch the desired result ?
+Ans. URL stands for Uniform Resource Locator. URL is the address of the website which 
+     you can find in the address bar of your web browser. 
+     It is a reference to a resource on the internet, 
+     be it images, hypertext pages, audio/video files, etc.
+
+     DNS is shortform for Domain Name System. Like a phonebook, 
+     DNS maintains and maps the name of the website, i.e. URL, and particular IP address 
+     it links to. Every URL on the internet has a unique IP address which is of the 
+     computer which hosts the server of the website requested.
+
+  1. Browser checks cache for DNS entry to find the corresponding IP address of website.
+     It looks for following cache. If not found in one, then continues checking to the 
+     next until found.
+     a. Browser Cache
+     b. Operating Systems Cache
+     c. Router Cache
+     d. ISP Cache
+    
+  2. If not found in cache, ISP’s (Internet Service Provider) DNS server initiates a DNS query
+     to find IP address of server that hosts the domain name.
+     The requests are sent using small data packets that contain information content of request
+     and IP address it is destined for.
+  
+  3. Browser initiates a TCP (Transfer Control Protocol) connection with the server 
+     using synchronize(SYN) and acknowledge(ACK) messages.
+    
+  4. Browser sends an HTTP request to the web server. GET or POST request.
+
+  5. Server on the host computer handles that request and sends back a response. 
+     It assembles a response in some format like JSON, XML and HTML.
+
+  6. Server sends out an HTTP response along with the status of response.
+
+  7. Browser displays HTML content.
+
+
+Que. What is the main functionality of the browser?  
+Ans. A web browser takes you anywhere on the internet. It retrieves information from 
+     other parts of the web and displays it on your desktop or mobile device. 
+     The information is transferred using the Hypertext Transfer Protocol, 
+     which defines how text, images and video are transmitted on the web.
+
+Que. High Level Components of a browser ?
+Ans.                    User Interface
+                              ||
+                        Browser Engine      ==    Data Persistence
+                              ||
+             ------------ Rendering Engine ---------------
+            ||                ||                        ||
+        Networking      JavaScript Interpreter      UI BackEnd
+
+Que. Rendering engine and it use?
+Ans. A rendering engine is software that draws text and images on the screen. 
+     The engine draws structured text from a document (HTML), 
+     and formats it properly based on the given style declarations (CSS).
+
+Que. Tree construction of Browser?
+Ans.                    window
+                          ||
+                        document      1. Moving from window to target node = Capture Phase
+                          ||          2. Reached target node = Target Phase
+                        <HTML>        3. Returning back from target node to window = Bubbling Phase
+                          ||
+                        <body>
+                          ||
+                        <table>
+              ------------||--------------  
+             ||                          ||   
+            <tr>                        <tr>   
+      -------||-------            -------||---------  
+     ||              ||          ||                 ||   
+    <td>            <td>        <td>               <td>   
+
+
+
+
+
+
+
+
+
+
+
+
+
