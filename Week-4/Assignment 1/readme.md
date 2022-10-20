@@ -1,5 +1,4 @@
-
-##Week-4 Assignment 1
+## Week-4 Assignment 1
 
     Here in this Week I learn about callbacks and Promises
     I have implemented Assignment 1 
@@ -9,7 +8,7 @@
     I got to know about the working of the callbacks and Promises and the way they are implemented
 
 
-##Feel free to provide your feedback to improve my coding technique.
+## Feel free to provide your feedback to improve my coding technique.
 
 
 
