@@ -5,8 +5,8 @@ const Fib = (n) => ({
     [Symbol.iterator]: () => {
         let i = 0;
         let a = 0;
-        let b = 0;
-        return {
+        let b = 0; 
+        return { 
             next : () => {
                 if( i++ <  n){
                     [a , b] = [b , (a + b) || 1];

@@ -2,7 +2,7 @@
 ## Assignment 1 
 Implement a function named as getNumber() which generate a random number. If randomNumber is divisible by 5 it will reject the promise else it will resolve the promise.
 
-## Assignment 2
+## Assignment 2 
 
 Create an object called Teacher derived from the Person class, and implement a method called teach which receives a string called subject, and prints out:
 [teacher's name] is now teaching [subject]
