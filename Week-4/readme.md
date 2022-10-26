@@ -9,7 +9,7 @@ Create an object called Teacher derived from the Person class, and implement a m
 
 ## Assignment 2
 
-Fibonacci Series with Iterators
+Print Fibonacci Series with Iterators
 
 
 ## Got to know about many topics in depth
