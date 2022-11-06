@@ -1,7 +1,3 @@
-## This directory contains the assignment related to week 4 ( Javascript )
-
-It contains 3 folders for 3 questions of Week 4 ( JavaScript ).
-
 
 ## Assignment 1 
 Implement a function named as getNumber() which generate a random number. If randomNumber is divisible by 5 it will reject the promise else it will resolve the promise.
@@ -13,7 +9,7 @@ Create an object called Teacher derived from the Person class, and implement a m
 
 ## Assignment 2
 
-Print Fibonacci Series with Iterators
+
 
 
 ## Got to know about many topics in depth
