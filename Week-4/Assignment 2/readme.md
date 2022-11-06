@@ -1,5 +1,5 @@
 
-##Week-4 Assignment 2
+## Week-4 Assignment 2
 
     Here in this Week I learn about inheritance
     I have created two function named as Person and Employee which works in parent child relationship
@@ -10,7 +10,7 @@
 
     I got to know about the working of the Inheritance and way how their prototype are connected
 
-##Feel free to provide your feedback to improve my coding technique.
+## Feel free to provide your feedback to improve my coding technique.
 
  
 
