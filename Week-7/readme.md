@@ -1,4 +1,4 @@
-# Week 6 Assignment
+# Week 7 Assignment
 
 Week 6 consists of 6 Question on Data Structure and Algorithms
 
