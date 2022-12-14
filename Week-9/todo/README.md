@@ -5,8 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Steps to start the Project
   step 1: open the project folder in VSCode
+  
   step 2: open terminal and install all the pakages
           type npm install and hit enter
+          
   step 3: type npm start to start the project
 
 
