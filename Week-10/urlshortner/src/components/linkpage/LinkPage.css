@@ -1,0 +1,34 @@
+.container-link{
+    width: 100%;
+    height: 60%;
+    overflow: auto;
+}
+
+.box{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.row{
+    display: flex;
+    padding: 5px;
+}
+
+.idx{
+    margin-left: 10px;
+}
+.link{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+

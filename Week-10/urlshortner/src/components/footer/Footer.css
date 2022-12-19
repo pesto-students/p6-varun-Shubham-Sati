@@ -1,0 +1,45 @@
+
+.footerContainer{
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 30.9%;
+}
+
+.footerlogo{
+    font-weight: bolder;
+}
+
+.footerContent{
+    display: flex;
+}
+
+ul{
+    padding: 1rem;
+    margin: 0 3rem;
+    list-style-type: none;
+}
+
+li{
+    margin-bottom: 25px;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.registration{
+    margin-top: 1rem;
+}
+
+.registration > li{
+    list-style-type: none;
+}
+
+.registration > li:hover{
+    cursor: pointer;
+}
+
+

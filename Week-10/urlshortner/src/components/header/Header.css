@@ -1,0 +1,44 @@
+
+.container{
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    /* background-color: red; */
+    justify-content: space-around;
+}
+
+.logo{
+    font-weight: bolder;
+}
+
+.tabs{
+    display: flex;
+}
+
+.tabsdivs{
+    padding: 0 0.4rem;
+}
+
+.registration{
+    display: flex;
+    justify-content: space-between;
+    width: 11rem;
+}
+
+.btn{
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    width: 5rem;
+    height: 2rem;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+
