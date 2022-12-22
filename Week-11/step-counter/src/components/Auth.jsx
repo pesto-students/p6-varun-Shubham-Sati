@@ -42,11 +42,11 @@ const Auth = () => {
       <Text>
         {user ? (
           <LogIn>
-            User Logged In click <br></br> below to LogOut
+            User Logged In <br></br> click below to LogOut
           </LogIn>
         ) : (
           <LogOut>
-            User Logged Out click <br></br> below to LogIn
+            User Logged Out <br></br> click below to LogIn
           </LogOut>
         )}
       </Text>
