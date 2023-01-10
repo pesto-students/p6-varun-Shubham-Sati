@@ -5,6 +5,7 @@ import TopButtons from "./components/TopButtons";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import Forecast from "./components/Forcast";
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,6 +36,8 @@ function App() {
 
         <TimeAndLocation />
         <TemperatureAndDetails />
+        <Forecast title="Hourly Forcast" />
+        <Forecast title="Daily Forcast" />
       </Container>
     </Wrapper>
   );

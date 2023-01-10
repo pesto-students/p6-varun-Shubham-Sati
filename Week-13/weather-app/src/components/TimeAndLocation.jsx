@@ -13,6 +13,11 @@ const Container = styled.div`
   /* margin: 1rem 0; */
 `;
 
+const Text = styled.p`
+  font-size: larger;
+  font-weight: bold;
+`;
+
 const TimeAndLocation = () => {
   return (
     <Wrapper>
@@ -20,7 +25,7 @@ const TimeAndLocation = () => {
         <p>Tuesday, 10 January 2023 | Local time: 10:50 AM</p>
       </Container>
       <Container>
-        <p>Berlin, DE</p>
+        <Text>Berlin, DE</Text>
       </Container>
     </Wrapper>
   );
