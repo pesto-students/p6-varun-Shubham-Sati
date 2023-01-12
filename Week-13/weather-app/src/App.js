@@ -1,11 +1,14 @@
 import "./App.css";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TopButtons from "./components/TopButtons";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import Forecast from "./components/Forcast";
+import getFormattedWeatherData from "./services/weatherService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +21,7 @@ const Wrapper = styled.div`
     rgba(9, 9, 121, 1) 35%,
     rgba(0, 212, 255, 1) 100%
   );
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 `;
 
 const Container = styled.div`
@@ -28,19 +31,49 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [query, setQuery] = useState({ q: "dehradun" });
+  const [aqi, setAqi] = useState({ aqi: "yes" });
+  const [weather, setWeather] = useState(null);
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const message = query.q ? query.q : "current location.";
+
+      toast.info("Fetching weather for " + message);
+
+      await getFormattedWeatherData({
+        ...query,
+        ...aqi,
+      }).then((data) => {
+        toast.success(
+          `Successfully fetched weather for ${data.name}, ${data.country}.`
+        );
+        setWeather(data);
+      });
+    };
+
+    fetchWeather();
+  }, [query]);
+
   return (
     <Wrapper>
       <Container>
-        <TopButtons />
-        <Inputs />
+        <TopButtons setQuery={setQuery} />
+        <Inputs setQuery={setQuery} />
 
-        <TimeAndLocation />
-        <TemperatureAndDetails />
-        <Forecast title="Hourly Forcast" />
-        <Forecast title="Daily Forcast" />
+        {weather && (
+          <>
+            <TimeAndLocation weather={weather} />
+            <TemperatureAndDetails weather={weather} />
+            <Forecast title="Hourly Forcast" items={weather.hourly} />
+            <Forecast title="Daily Forcast" items={weather.forecast} />
+          </>
+        )}
       </Container>
+      <ToastContainer autoClose={3000} theme="colored" newestOnTop={true} />
     </Wrapper>
   );
 }
 
 export default App;
+

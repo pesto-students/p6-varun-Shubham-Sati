@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { iconUrlFromCode } from "../services/weatherService";
 
 const Wrapper = styled.div`
   padding: 0 1rem;
@@ -38,38 +39,59 @@ const Img = styled.img`
   height: 55px;
 `;
 
-const Forcast = ({ title }) => {
+const Forcast = ({ title, items }) => {
   return (
     <Wrapper>
       <Container>
         <Text style={{ fontWeight: "bold" }}>{title}</Text>
         <Hr />
         <Details>
-          <Detail>
-            <Text style={{ fontSize: "10px" }}>4:30 PM</Text>
+          {items.map((item, idx) => {
+            return (
+              <Detail key={idx}>
+                <Text style={{ fontSize: "10px" }}>{item.hour}</Text>
+                <Img src={iconUrlFromCode(item.icon)} />
+                <Text style={{ fontSize: "10px" }}>{item.temp}°</Text>
+              </Detail>
+            );
+          })}
+
+          {/* <Detail>
+            <Text style={{ fontSize: "10px" }}>
+              {title === "Hourly Forcast" ? "12:00 PM" : ""}
+            </Text>
+            <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
+            <Text style={{ fontSize: "10px" }}>22°</Text>
+          </Detail> */}
+
+          {/* <Detail>
+            <Text style={{ fontSize: "10px" }}>
+              {title === "Hourly Forcast" ? "1:00 PM" : ""}
+            </Text>
             <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
             <Text style={{ fontSize: "10px" }}>22°</Text>
           </Detail>
           <Detail>
-            <Text style={{ fontSize: "10px" }}>4:30 PM</Text>
+            <Text style={{ fontSize: "10px" }}>
+              {title === "Hourly Forcast" ? "2:00 PM" : ""}
+            </Text>
             <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
             <Text style={{ fontSize: "10px" }}>22°</Text>
           </Detail>
           <Detail>
-            <Text style={{ fontSize: "10px" }}>4:30 PM</Text>
+            <Text style={{ fontSize: "10px" }}>
+              {title === "Hourly Forcast" ? "3:00 PM" : ""}
+            </Text>
             <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
             <Text style={{ fontSize: "10px" }}>22°</Text>
           </Detail>
           <Detail>
-            <Text style={{ fontSize: "10px" }}>4:30 PM</Text>
+            <Text style={{ fontSize: "10px" }}>
+              {title === "Hourly Forcast" ? "4:00 PM" : ""}
+            </Text>
             <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
             <Text style={{ fontSize: "10px" }}>22°</Text>
-          </Detail>
-          <Detail>
-            <Text style={{ fontSize: "10px" }}>4:30 PM</Text>
-            <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
-            <Text style={{ fontSize: "10px" }}>22°</Text>
-          </Detail>
+          </Detail> */}
         </Details>
       </Container>
     </Wrapper>

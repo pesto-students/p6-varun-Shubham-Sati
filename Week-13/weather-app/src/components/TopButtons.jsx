@@ -5,20 +5,24 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
   padding: 0 1rem;
 `;
 
 const Button = styled.div`
   color: white;
   font-size: larger;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid white;
 
   &:hover {
     cursor: pointer;
+    border-color: red;
   }
 `;
 
-const TopButtons = () => {
+const TopButtons = ({ setQuery }) => {
   const cities = [
     {
       id: 1,
@@ -45,7 +49,9 @@ const TopButtons = () => {
   return (
     <Wrapper>
       {cities.map((city) => (
-        <Button key={city.id}>{city.title}</Button>
+        <Button key={city.id} onClick={() => setQuery({ q: city.title })}>
+          {city.title}
+        </Button>
       ))}
     </Wrapper>
   );

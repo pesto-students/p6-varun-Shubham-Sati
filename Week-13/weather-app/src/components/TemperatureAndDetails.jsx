@@ -7,10 +7,11 @@ import AirIcon from "@mui/icons-material/Air";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import WbTwilightIcon from "@mui/icons-material/WbTwilight";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
+import { iconUrlFromCode } from "../services/weatherService";
 
 const Wrapper = styled.div`
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   padding: 0 1rem;
 `;
 
@@ -18,6 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
 `;
 const Text = styled.p`
   margin: 0;
@@ -48,41 +50,45 @@ const InnerContainer = styled.div`
   gap: 10px;
 `;
 
-const TemperatureAndDetails = () => {
+const TemperatureAndDetails = ({ weather }) => {
   return (
     <Wrapper>
       <Container>
-        {/* <Text>Clear</Text> */}
+        <Text>{weather.text}</Text>
         <Details>
-          <Img src="http://openweathermap.org/img/wn/01d@2x.png" />
-          <Text style={{ fontSize: "24px" }}>34°</Text>
+          <Img src={iconUrlFromCode(weather.icon)} />
+          <Text style={{ fontSize: "24px" }}>{weather.temp_c}°C</Text>
           <Container style={{ lineHeight: "3px" }}>
             <InnerContainer>
               <DeviceThermostatIcon style={{ fontSize: "24px" }} />
               <Text style={{ fontSize: "12px" }}>Real Feal:</Text>
-              <Text style={{ fontSize: "12px", fontWeight: "bold" }}>32°</Text>
+              <Text style={{ fontSize: "12px", fontWeight: "bold" }}>
+                {weather.feelslike_c}°C
+              </Text>
             </InnerContainer>
             <InnerContainer>
               <AcUnitIcon style={{ fontSize: "24px" }} />
               <Text style={{ fontSize: "12px" }}>Humidity:</Text>
-              <Text style={{ fontSize: "12px", fontWeight: "bold" }}>65%</Text>
+              <Text style={{ fontSize: "12px", fontWeight: "bold" }}>
+                {weather.humidity}%
+              </Text>
             </InnerContainer>
             <InnerContainer>
               <AirIcon style={{ fontSize: "24px" }} />
               <Text style={{ fontSize: "12px" }}>Wind:</Text>
               <Text style={{ fontSize: "12px", fontWeight: "bold" }}>
-                11 km/h
+                {weather.wind_kph}kph
               </Text>
             </InnerContainer>
           </Container>
         </Details>
 
-        <Details style={{ marginTop: "10px" }} >
+        <Details style={{ marginTop: "10px" }}>
           <InnerContainer>
             <WbSunnyIcon style={{ fontSize: "16px" }} />
             <Text style={{ fontSize: "14px" }}>Rise:</Text>
             <Text style={{ fontSize: "14px", fontWeight: "bold" }}>
-              6:45 AM
+              {weather.sunrise}
             </Text>
           </InnerContainer>
           <Text>|</Text>
@@ -90,7 +96,7 @@ const TemperatureAndDetails = () => {
             <WbTwilightIcon style={{ fontSize: "16px" }} />
             <Text style={{ fontSize: "14px" }}>Sunset:</Text>
             <Text style={{ fontSize: "14px", fontWeight: "bold" }}>
-              7:45 PM
+              {weather.sunset}
             </Text>
           </InnerContainer>
           <Text>|</Text>
@@ -98,7 +104,7 @@ const TemperatureAndDetails = () => {
             <WbSunnyIcon style={{ fontSize: "16px" }} />
             <Text style={{ fontSize: "14px" }}>High:</Text>
             <Text style={{ fontSize: "14px", fontWeight: "bold" }}>
-              45°
+              {weather.high}°
             </Text>
           </InnerContainer>
           <Text>|</Text>
@@ -106,7 +112,7 @@ const TemperatureAndDetails = () => {
             <WbSunnyIcon style={{ fontSize: "16px" }} />
             <Text style={{ fontSize: "14px" }}>Low:</Text>
             <Text style={{ fontSize: "14px", fontWeight: "bold" }}>
-              40°
+              {weather.low}°
             </Text>
           </InnerContainer>
         </Details>
