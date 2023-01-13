@@ -1,3 +1,19 @@
+
+#How the Project work
+
+Get the API KEY from weatherApi site
+  #1 Login free in weatherAPI site and get your APIKEY ( alphanumerical )from MY Account tab ( site link => https://www.weatherapi.com/my/ )
+  #2 paste your API Key in the services/weatherService.js
+  #3 start project with npm start
+  
+  #functionality 
+    1.Try different cities given in the web app
+    2.Try searching different cities and countries
+    3.Try your own location for fetching weather
+    4.You will get next 5 hours forcast for the current city you searched.
+    5.you will get next 5 days forcast for current city you searched.
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
