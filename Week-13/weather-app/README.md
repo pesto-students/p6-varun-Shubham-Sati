@@ -6,7 +6,7 @@ Get the API KEY from weatherApi site
 # 2 paste your API Key in the services/weatherService.js
 # 3 start project with npm start
 
-# functionality 
+# Functionality of the Web app
 1. Try different cities given in the web app
 2. Try searching different cities and countries
 3. Try your own location for fetching weather
