@@ -1,0 +1,25 @@
+const mongoose = require("mongoose");
+
+const dbConnect = async () => {
+  try {
+    await mongoose.connect(
+      "mongodb+srv://shubham:shubham1234@expenses-tracker.cmtj3ns.mongodb.net/?retryWrites=true&w=majority",
+      {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+      }
+    );
+
+    // await mongoose.connect(process.env.MONGO_URL, {
+    //   useUnifiedTopology: true,
+    //   useNewUrlParser: true,
+    //   useMongoClient: true,
+    // });
+
+    console.log(`DB connected Successfully`);
+  } catch (error) {
+    console.log(`Error ${error.message}`);
+  }
+};
+
+module.exports = dbConnect;
