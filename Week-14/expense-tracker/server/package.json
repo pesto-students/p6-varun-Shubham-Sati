@@ -6,7 +6,7 @@
   "engines": {
     "node": "v16.4.1"
   },
-  "scripts": {
+  "scripts": { 
     "start": "node src/server.js",
     "watch": "nodemon src/server.js"
   },
