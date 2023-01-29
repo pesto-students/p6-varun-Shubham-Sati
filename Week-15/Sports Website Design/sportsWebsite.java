@@ -66,7 +66,7 @@ public class Player{
         return total_score;
     }
 
-    public int get_global-ranking(){
+    public int get_global_ranking(){
         return global_ranking;
     }
 
